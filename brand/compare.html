@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ink.css">
+<style>
+  /* Embed Anywhere before and after. ?a=<before png>&b=<after png>, #night for dark. */
+  html, body { margin: 0; overflow: hidden; width: 1600px; height: 940px; }
+  .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 64px 80px; }
+  h2 { margin: 0; font-size: 40px; font-weight: 500; color: var(--ink); letter-spacing: -.5px; }
+  h2 i { color: var(--red); font-style: normal; }
+  p { margin: 6px 0 22px; font-size: 26px; color: var(--muted); }
+  .shot { height: 700px; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; background: #fff; }
+  .shot img { width: 100%; display: block; }
+</style></head>
+<body><div class="w">
+  <div><h2>Pasted as a plain iframe</h2><p>Boxed in by the builder's padding. Cut off at a fixed height.</p><div class="shot"><img id="a" alt=""></div></div>
+  <div><h2>Placed and checked by your agent<i>.</i></h2><p>Edge to edge, full height, checked at three widths.</p><div class="shot"><img id="b" alt=""></div></div>
+</div>
+<script>var q = new URLSearchParams(location.search); a.src = q.get('a'); b.src = q.get('b');</script>
+<script>if (location.hash !== '#night') { var p = document.createElement('style'); p.textContent = ':root{--pearl:#f2ece0;--paper:#f8f4ea;--ink:#1b1a17;--body:#3d3a33;--muted:#6e675b;--red:#c23b25;--line:rgba(27,26,23,.14);--line-strong:rgba(27,26,23,.28);color-scheme:light}'; document.head.appendChild(p); }</script>
+<script>if (location.hash === '#night') { var s = document.createElement('style'); s.textContent = ':root{--pearl:#151412;--paper:#1d1c19;--ink:#f2ece0;--body:#d6cfc1;--muted:#a59d8f;--red:#e0553a;--line:rgba(242,236,224,.12);--line-strong:rgba(242,236,224,.26)}'; document.head.appendChild(s); }</script>
+</body></html>

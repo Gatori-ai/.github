@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ink.css">
+<style>
+  /* One template for every Gatori-ai image.
+     ?kind=banner  1600x520, README header (same layout as the first two repos)
+     ?kind=social  1280x640, GitHub link-sharing image
+     &t=Title &s=Tagline &repo=name &by=footer line (HTML)   #night for the dark version */
+  html, body { margin: 0; overflow: hidden; }
+  .b { position: relative; padding: 92px 110px; }
+  h1 { margin: 0; letter-spacing: -2.5px; font-weight: 500; line-height: 1.02; color: var(--ink); }
+  h1 i { color: var(--red); font-style: normal; }
+  p { margin: 14px 0 0; color: var(--body); }
+  .by { position: absolute; left: 110px; font-size: 30px; color: var(--muted); }
+  .by b { color: var(--ink); font-weight: 500; }
+  .mark { position: absolute; }
+  .rule { position: absolute; left: 110px; right: 110px; border-top: 1px solid var(--line-strong); }
+
+  .banner, .banner .b { width: 1600px; height: 520px; }
+  .banner h1 { font-size: 88px; } .banner p { font-size: 44px; }
+  .banner .by { bottom: 70px; } .banner .rule { bottom: 44px; }
+  .banner .mark { right: 70px; top: 30px; width: 460px; height: 460px; }
+
+  .social, .social .b { width: 1280px; height: 640px; }
+  .social .b { padding: 96px 84px; }
+  .social h1 { font-size: 92px; max-width: 760px; } .social p { font-size: 40px; max-width: 700px; margin-top: 22px; }
+  .social .by { left: 84px; bottom: 64px; font-size: 28px; }
+  .social .rule { left: 84px; right: 84px; bottom: 120px; }
+  .social .mark { right: 40px; top: 70px; width: 440px; height: 440px; }
+</style></head>
+<body><div class="b" id="b">
+  <img class="mark" src="enso.png" alt="">
+  <h1 id="t"></h1>
+  <p id="s"></p>
+  <div class="rule"></div>
+  <div class="by" id="by"></div>
+</div>
+<script>
+  var q = new URLSearchParams(location.search);
+  var kind = q.get('kind') || 'banner';
+  document.documentElement.className = kind;
+  document.getElementById('t').innerHTML = q.get('t').replace(/&/g, '&amp;').replace(/</g, '&lt;') + '<i>.</i>';
+  document.getElementById('s').textContent = q.get('s') || '';
+  var repo = q.get('repo');
+  document.getElementById('by').innerHTML = q.get('by') ? q.get('by') : kind === 'social' && repo
+    ? 'github.com/Gatori-ai/' + repo + ' &nbsp;&middot;&nbsp; Free and open source &nbsp;&middot;&nbsp; <b>Gatori.ai</b>'
+    : 'Brought to you by <b>Gatori.ai</b>';
+</script>
+<script>if (location.hash !== '#night') { var p = document.createElement('style'); p.textContent = ':root{--pearl:#f2ece0;--paper:#f8f4ea;--ink:#1b1a17;--body:#3d3a33;--muted:#6e675b;--red:#c23b25;--line:rgba(27,26,23,.14);--line-strong:rgba(27,26,23,.28);--on-red:#fffdf9;color-scheme:light}.mark{filter:none}'; document.head.appendChild(p); }</script>
+<script>if (location.hash === '#night') { var s = document.createElement('style'); s.textContent = ':root{--pearl:#151412;--paper:#1d1c19;--ink:#f2ece0;--body:#d6cfc1;--muted:#a59d8f;--red:#e0553a;--line:rgba(242,236,224,.12);--line-strong:rgba(242,236,224,.26);--on-red:#151412}.mark{filter:invert(1) hue-rotate(180deg)}'; document.head.appendChild(s); }</script>
+</body></html>
