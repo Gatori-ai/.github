@@ -10,6 +10,7 @@
 |---|---|
 | [AI Copy Trainer](https://github.com/Gatori-ai/ai-copy-trainer) | Reads your own writing, writes down the rules of how you sound, and sharpens those rules every time you edit a draft. One new draft a day, on a local page or inside your agent. |
 | [Funnel & Ecosystem Map](https://github.com/Gatori-ai/funnel-ecosystem-map) | Describe a funnel or a whole business in plain words and get a map of it: content, offers, people, systems and the paths between them. Every card and arrow stays editable, by hand or by asking. |
+| [Embed Anywhere](https://github.com/Gatori-ai/embed-anywhere) | Your AI agent builds a page, or takes one you already have, hosts it, and puts it on Kajabi, GoHighLevel, Squarespace or any site builder. It checks the published page at phone, tablet and desktop widths and fixes what it finds. You never copy or paste code. |
 
 Each project is a folder you clone and run on your own computer. Your files stay with you.
 
